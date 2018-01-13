@@ -1,5 +1,19 @@
 #include <stdio.h>
 
+#define TAB '\t'
+#define SPACE ' '
+
+
+
+/*
+ * function that skips the rest of the line
+ * @param file -> File that is being read
+ */
+void skip_line(FILE *file) {
+
+    while (fgetc(file) != '\n');
+}
+
 
 /*
  * Program that takes a text file (preferably a program file) as argument
@@ -25,14 +39,16 @@ int main(int argc, char *argv[]) {
     int nchar;
     while ((nchar = fgetc(file)) != EOF) {
 
-        if (nchar == '\t') {
+        if (nchar == TAB) {
             printf("TAB\n");
         }
-        else if (nchar == ' ') {
+
+        else if (nchar == SPACE) {
             printf("SPACE\n");
         }
+
         else {
-            printf("%c\n", nchar);
+            skip_line(file);
         }
     }
     fclose(file);

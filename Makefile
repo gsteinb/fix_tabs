@@ -1,6 +1,6 @@
 # Makefile for image retrieval program.
 
-FLAGS= -Wall -std=gnu99
+FLAGS= -Wall -g -std=gnu99
 
 all : fix_tabs
 
