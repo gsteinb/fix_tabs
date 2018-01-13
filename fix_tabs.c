@@ -15,6 +15,29 @@ void skip_line(FILE *file) {
 }
 
 
+void print_num_tabs(FILE *file) {
+
+    int tab_count = 1;
+    while (fgetc(file) == TAB) {
+        tab_count++;
+    }
+    printf("%d\n", tab_count);
+}
+
+
+void print_num_spaces(FILE *file) {
+
+    // space is one because we have already
+    // read one space
+    int space_number = 1;
+    while (fgetc(file) == SPACE) {
+        space_number++;
+    }
+    printf("%d\n", space_number);
+}
+
+
+
 /*
  * Program that takes a text file (preferably a program file) as argument
  * and fixes the leading tabs or whitespaces
@@ -40,11 +63,11 @@ int main(int argc, char *argv[]) {
     while ((nchar = fgetc(file)) != EOF) {
 
         if (nchar == TAB) {
-            printf("TAB\n");
+            print_num_tabs(file);
         }
 
         else if (nchar == SPACE) {
-            printf("SPACE\n");
+            print_num_spaces(file);
         }
 
         else {
