@@ -1,8 +1,6 @@
 #include <stdio.h>
 
 
-
-
 /*
  * Program that takes a text file (preferably a program file) as argument
  * and fixes the leading tabs or whitespaces
@@ -26,7 +24,16 @@ int main(int argc, char *argv[]) {
 
     int nchar;
     while ((nchar = fgetc(file)) != EOF) {
-        printf("%c|\n", nchar);
+
+        if (nchar == '\t') {
+            printf("TAB\n");
+        }
+        else if (nchar == ' ') {
+            printf("SPACE\n");
+        }
+        else {
+            printf("%c\n", nchar);
+        }
     }
     fclose(file);
     printf("Closing File\n");

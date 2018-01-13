@@ -12,6 +12,6 @@ fix_tabs : fix_tabs.o
 	gcc -c $< ${FLAGS}
 
 clean :
-	-rm *.o fix_tabs.o
+	-rm *.o
 
 
