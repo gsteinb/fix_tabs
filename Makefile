@@ -1,6 +1,7 @@
 # Makefile for image retrieval program.
 
-FLAGS= -Wall -g -std=gnu99
+# need the lm for the math import 
+FLAGS= -Wall -g -std=gnu99 -lm
 
 all : fix_tabs
 
