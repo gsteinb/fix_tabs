@@ -28,6 +28,22 @@ liking
 
 **********************************************
 
+		   HOW TO
+
+**********************************************
+
+Right now fix_tabs is a command line program.
+In order to build it:
+
+- Download all the files
+- open command line and cd to directory with
+the files
+- run "make"
+- if you want to remove .o files run "make
+clean"
+
+**********************************************
+
 		VERSION 0.1
 
 **********************************************
@@ -56,7 +72,7 @@ indentation
 do not use the same number of spaces for
 a tab (hopefully by mistake)
 
--refactor code
+- refactor code
 
 
 **********************************************
@@ -65,4 +81,4 @@ a tab (hopefully by mistake)
 
 **********************************************
 
-
+- Subsequent runs of fix_tabs removes the tabs
