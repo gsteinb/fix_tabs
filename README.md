@@ -6,7 +6,7 @@
 
 *****************************************************
 
-		     FIX_TABS v 0.1
+		      ABOUT
 
 *****************************************************
 
@@ -26,6 +26,36 @@ tabs or spaces, and fix tabs will change your
 file to replace the tabs and spaces to your 
 liking
 
+**********************************************
+
+		VERSION 0.1
+
+**********************************************
+
+- fix_tabs can now convert tabs to spaces
+
+- NUM_SPACES_FOR_TABS is 4 by default
+in fix_tabs.c
+
+- fix_tabs does not deal with files that 
+do not have the same number of spaces per
+indent
+
+*********************************************
+
+             PLANS FOR FUTURE
+
+*********************************************
+
+- want to be able to convert tabs to spaces
+
+- want to be able to deal with mixed 
+indentation
+
+- want to be able to deal with files that 
+do not use the same number of spaces for
+a tab (hopefully by mistake)
+
 
 **********************************************
 
@@ -33,5 +63,4 @@ liking
 
 **********************************************
 
--> Currently skipping the last line that needs
-to be read
+
