@@ -22,7 +22,7 @@ void place_tabs(FILE *read_file, FILE *dest_file, int space_num) {
 }
 
 
-void fix_tabs(char *filename) {
+void replace_spaces(char *filename) {
 
     FILE *file, *temp_file;
     // open files

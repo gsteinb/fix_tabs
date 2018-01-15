@@ -5,7 +5,7 @@ FLAGS= -Wall -g -std=gnu99 -lm
 
 all : fix_tabs
 
-fix_tabs : fix_tabs.o globals.o replace_spaces.o
+fix_tabs : fix_tabs.o globals.o replace_spaces.o replace_tabs.o
 	gcc -o $@ fix_tabs.o globals.o replace_spaces.o ${FLAGS}
 
 # Separately compile each C file
@@ -13,6 +13,7 @@ fix_tabs : fix_tabs.o globals.o replace_spaces.o
 	gcc -c $< ${FLAGS}
 
 fix_tabs.o : globals.h
+replace_tabs.o : globals.h
 replace_spaces.o : globals.h
 globals.c : globals.h
 
