@@ -37,7 +37,7 @@ void fix_tabs(char *filename) {
         if (nchar == SPACE) {
             space_count = num_preceding_spaces(file);
         }
-        if (nchar != SPACE && nchar != TAB) {
+        if (nchar != SPACE) {
 
             fseek(file, -1, SEEK_CUR);
             place_chars(file, temp_file, space_count);

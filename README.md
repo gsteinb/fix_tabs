@@ -81,4 +81,3 @@ a tab (hopefully by mistake)
 
 **********************************************
 
-- Subsequent runs of fix_tabs removes the tabs
