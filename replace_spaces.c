@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <math.h>
-#include <errno.h>
 #include <stdlib.h>
 #include "globals.h"
 
 
-void place_chars(FILE *read_file, FILE *dest_file, int space_num) {
+void place_tabs(FILE *read_file, FILE *dest_file, int space_num) {
 
     // place the tabs in the temp file
     float num_tabs = (float) space_num / (float) NUM_SPACE_FOR_TAB;
@@ -42,9 +41,10 @@ void fix_tabs(char *filename) {
         if (nchar != SPACE) {
 
             fseek(file, -1, SEEK_CUR);
-            place_chars(file, temp_file, space_count);
+            place_tabs(file, temp_file, space_count);
         }
     }
+    // file closing and removal of temp files
     if (fclose(file) == EOF) {
         fprintf(stderr, "Error closing %s\n", filename);
         exit(EXIT_FAILURE);

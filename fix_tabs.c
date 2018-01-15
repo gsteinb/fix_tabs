@@ -2,15 +2,6 @@
 #include <math.h>
 #include "globals.h"
 
-void print_num_tabs(FILE *file) {
-
-    int tab_count = 1;
-    while (fgetc(file) == TAB) {
-        tab_count++;
-    }
-    printf("%d tabs\n", tab_count);
-}
-
 
 /*
  * Program that takes a text file (preferably a program file) as argument
