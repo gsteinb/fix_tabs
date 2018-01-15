@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <math.h>
+#include <errno.h>
+#include <stdlib.h>
 #include "globals.h"
 
 
@@ -43,21 +45,20 @@ void fix_tabs(char *filename) {
             place_chars(file, temp_file, space_count);
         }
     }
-    char error_msg[BUFFER_SIZE];
     if (fclose(file) == EOF) {
-        sprintf(error_msg, "Error closing %s\n", filename);
-        perror(error_msg);
+        fprintf(stderr, "Error closing %s\n", filename);
+        exit(EXIT_FAILURE);
     }
     if (fclose(temp_file) == EOF) {
         perror("Error closing temp file\n");
     }
     if (remove(filename) == -1) {
-        sprintf(error_msg, "Could not remove file %s\n", filename);
-        perror(error_msg);
+        fprintf(stderr,"Could not remove file %s\n", filename);
+        exit(EXIT_FAILURE);
     }
     if (rename("temp", filename) == -1) {
-        sprintf(error_msg, "Could not rename temp to %s\n", filename);
-        perror(error_msg);
+        fprintf(stderr, "Could not rename temp to %s\n", filename);
+	exit(EXIT_FAILURE);
     }
     printf("Success...\n");
 }
