@@ -14,11 +14,7 @@ void place_tabs(FILE *read_file, FILE *dest_file, int space_num) {
         fprintf(dest_file, "%c", '\t');
         tab_num--;
     }
-    char nchar;
-    while((nchar = fgetc(read_file)) != '\n') {
-        fprintf(dest_file, "%c", nchar);
-    }
-    fprintf(dest_file, "%c", '\n');
+    copy_file(read_file, dest_file);
 }
 
 

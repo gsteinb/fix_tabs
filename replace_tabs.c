@@ -13,11 +13,7 @@ void place_spaces(FILE *read_file, FILE *dest_file, int num_tabs) {
         fprintf(dest_file, "%c", ' ');
         num_spaces--;
     }
-    char nchar;
-    while ((nchar = fgetc(read_file)) != '\n') {
-        fprintf(dest_file, "%c", nchar);
-    }
-    fprintf(dest_file, "%c", '\n');
+    copy_file(read_file, dest_file);
 }
 
 

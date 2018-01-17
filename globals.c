@@ -23,3 +23,13 @@ int num_preceding_tabs(FILE *file) {
     fseek(file, -1, SEEK_CUR);
     return tab_number;
 }
+
+
+void copy_file(FILE *read_file, FILE *dest_file) {
+
+    char nchar;
+    while((nchar = fgetc(read_file)) != '\n') {
+        fprintf(dest_file, "%c", nchar);
+    }
+    fprintf(dest_file, "%c", '\n');
+}

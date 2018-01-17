@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 #include "globals.h"
-
 
 /*
  * Program that takes a text file (preferably a program file) as argument
@@ -15,7 +15,10 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Invalid number of arguments\n");
         return 1;
     };
-
+    if (strlen(argv[2]) > 1) {
+        fprintf(stderr, "Invalid Mode given\n");
+        return 1;
+    }
     switch (argv[2][0]) {
         case 'S':
         replace_spaces(argv[1]);
@@ -24,7 +27,7 @@ int main(int argc, char *argv[]) {
         replace_tabs(argv[1]);
         break;
         default:
-        fprintf(stderr, "Invalid Mode given: expecting TAB, or SPACE\n");
+        fprintf(stderr, "Invalid Mode given: expecting T, or S\n");
         exit(1);
     }
 
