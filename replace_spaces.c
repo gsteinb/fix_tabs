@@ -38,6 +38,8 @@ void replace_spaces(char *filename) {
 
             fseek(file, -1, SEEK_CUR);
             place_tabs(file, temp_file, space_count);
+	    LINE_NUMBER++;
+            space_count = 0;
         }
     }
     // file closing and removal of temp files

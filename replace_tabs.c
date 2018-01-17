@@ -36,9 +36,10 @@ void replace_tabs(char *filename) {
            tab_count = num_preceding_tabs(file);
         }
         else {
-
-           fseek(file, -1, SEEK_CUR);
-           place_spaces(file, temp_file, tab_count);
+            fseek(file, -1, SEEK_CUR);
+            place_spaces(file, temp_file, tab_count);
+	    LINE_NUMBER++;
+            tab_count = 0;
         }
     }
     if (fclose(file) == EOF) {
