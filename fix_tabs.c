@@ -4,6 +4,8 @@
 #include <string.h>
 #include "globals.h"
 
+int LINE_NUMBER = 1;
+
 /*
  * Program that takes a text file (preferably a program file) as argument
  * and fixes the leading tabs or whitespaces

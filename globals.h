@@ -3,6 +3,8 @@
 #define SPACE ' '
 #define NUM_SPACE_FOR_TAB 4
 
+extern int LINE_NUMBER;
+
 int num_preceding_spaces(FILE *);
 int num_preceding_tabs(FILE *);
 void place_spaces(FILE *, FILE *, int);
