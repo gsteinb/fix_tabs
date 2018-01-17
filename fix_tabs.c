@@ -16,11 +16,11 @@ int main(int argc, char *argv[]) {
         return 1;
     };
 
-    switch (argv[2]) {
-        case "TAB":
+    switch (argv[2][0]) {
+        case 'S':
         replace_spaces(argv[1]);
         break;
-        case "SPACE":
+        case 'T':
         replace_tabs(argv[1]);
         break;
         default:

@@ -11,7 +11,7 @@ void place_spaces(FILE *read_file, FILE *dest_file, int num_tabs) {
     int num_spaces = num_tabs * NUM_SPACE_FOR_TAB;
     while (num_spaces > 0) {
         fprintf(dest_file, "%c", ' ');
-        num_tabs--;
+        num_spaces--;
     }
     char nchar;
     while ((nchar = fgetc(read_file)) != '\n') {
@@ -37,14 +37,14 @@ void replace_tabs(char *filename) {
     char nchar;
     while ((nchar = fgetc(file)) != EOF) {
         if (nchar == TAB) {
-           space_count = num_preceding_tabs(file);
+           tab_count = num_preceding_tabs(file);
         }
-        if (nchar != TAB) {
+        else {
 
-            fseek(file, -1, SEEK_CUR);
-            place_spaces(file, temp_file, tab_count);
+           fseek(file, -1, SEEK_CUR);
+           place_spaces(file, temp_file, tab_count);
+        }
     }
-
     if (fclose(file) == EOF) {
         perror("Error closing file\n");
     }
