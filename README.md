@@ -44,14 +44,18 @@ clean"
 
 **********************************************
 
-		VERSION 0.1
+		VERSION 0.2
 
 **********************************************
 
 - fix_tabs can now convert tabs to spaces
+or spaces to tabs
+
+- Takes 3 arguments when running from the
+command line. 
 
 - NUM_SPACES_FOR_TABS is 4 by default
-in fix_tabs.c
+in globals.c
 
 - fix_tabs does not deal with files that 
 do not have the same number of spaces per
