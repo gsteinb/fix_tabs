@@ -85,3 +85,6 @@ a tab (hopefully by mistake)
 
 **********************************************
 
+-> Error when trying with python file, that has
+tabs mxied with spaces: the tab width is not enough
+spaces for indent
