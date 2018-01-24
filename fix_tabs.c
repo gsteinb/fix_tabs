@@ -4,6 +4,8 @@
 #include <string.h>
 #include "globals.h"
 
+
+int SPACES_FOR_TAB = 4;
 int LINE_NUMBER = 1;
 
 /*

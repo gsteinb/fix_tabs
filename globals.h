@@ -1,8 +1,7 @@
-#define BUFFER_SIZE 30
 #define TAB '\t'
 #define SPACE ' '
-#define NUM_SPACE_FOR_TAB 4
 
+extern int SPACES_FOR_TAB;
 extern int LINE_NUMBER;
 
 int num_preceding_spaces(FILE *);
